@@ -1,6 +1,15 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Eyebrow, PageShell, Section } from "../components";
 import { imageAssets } from "../data";
+
+export const metadata: Metadata = {
+  title: "Mahroo Image QA Gallery",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function ImageGalleryPage() {
   return (

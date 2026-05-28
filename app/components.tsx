@@ -15,11 +15,13 @@ export function Header() {
           <Link href="/#programs">Programs</Link>
           <Link href="/#method">Method</Link>
           <Link href="/#faq">FAQ</Link>
-          <Link href="/image-gallery">Images</Link>
           <Link className="btn btn-small" href="/fit-check">
             Fit Check
           </Link>
         </nav>
+        <Link className="btn btn-small mobile-header-cta" href="/fit-check">
+          Fit Check
+        </Link>
       </div>
     </header>
   );

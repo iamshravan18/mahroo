@@ -1,13 +1,6 @@
-import Link from "next/link";
 import { Eyebrow, PageShell, Section } from "../components";
-import { fitCheckQuestions, results } from "../data";
-
-const answers = [
-  ["Easier global travel", "Children's education", "Business expansion", "Family security / Plan B"],
-  ["Portugal / Europe", "UAE / Dubai", "Caribbean citizenship", "Panama / Latin America"],
-  ["Within 3 months", "3-6 months", "6-12 months", "Researching only"],
-  ["USD 200k-350k", "USD 350k-600k", "USD 600k-1M", "USD 1M+"],
-];
+import { results } from "../data";
+import { FitCheckForm } from "./fit-check-form";
 
 export default function FitCheckPage() {
   return (
@@ -20,44 +13,15 @@ export default function FitCheckPage() {
               Find which residency or citizenship route may match your family, budget, and timeline.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d8cfbf]">
-              This front-end preview shows the exact questions and segmentation logic.
-              In production, these answers connect to the CRM, email sequence, and booking qualifier.
+              Answer a short private assessment. You will receive an initial route
+              segment and a next step based on your region, capital range, family
+              needs, timeline, and documentation readiness.
             </p>
           </div>
         </Section>
 
         <Section>
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <aside className="soft-card h-fit">
-              <h2 className="font-serif text-3xl text-[#183b32]">Result paths</h2>
-              <div className="mt-6 space-y-3">
-                {results.map((result) => (
-                  <Link key={result.slug} className="result-link" href={`/results/${result.slug}`}>
-                    {result.label}
-                  </Link>
-                ))}
-              </div>
-            </aside>
-            <div className="space-y-5">
-              {fitCheckQuestions.map((question, index) => (
-                <div key={question} className="soft-card">
-                  <div className="flex items-start gap-4">
-                    <span className="number-pill">{index + 1}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-[#183b32]">{question}</h3>
-                      <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                        {(answers[index % answers.length] ?? answers[0]).map((answer) => (
-                          <button key={answer} className="answer-chip" type="button">
-                            {answer}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <FitCheckForm resultLabels={results.map(({ slug, label }) => ({ slug, label }))} />
         </Section>
       </main>
     </PageShell>

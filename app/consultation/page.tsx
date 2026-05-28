@@ -1,21 +1,5 @@
 import { AssetImage, Eyebrow, PageShell, Section } from "../components";
-
-const formFields = [
-  "Full name",
-  "Email",
-  "WhatsApp number",
-  "City and country of residence",
-  "Nationality / citizenship held",
-  "Occupation / business type",
-  "Main goal",
-  "Preferred regions",
-  "Timeline",
-  "Investment capacity range",
-  "Family members to include",
-  "Preferred investment type",
-  "Visa refusals or sensitive constraints",
-  "Source-of-funds readiness",
-];
+import { ConsultationForm } from "./consultation-form";
 
 export default function ConsultationPage() {
   return (
@@ -73,17 +57,11 @@ export default function ConsultationPage() {
         </Section>
 
         <Section tone="white">
-          <Eyebrow>Qualifier preview</Eyebrow>
+          <Eyebrow>Private qualifier</Eyebrow>
           <h2 className="section-title max-w-3xl">
             Calendar access follows the qualifier, so Mahroo speaks only with serious, suitable inquiries.
           </h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {formFields.map((field) => (
-              <div key={field} className="soft-card text-sm font-medium text-[#183b32]">
-                {field}
-              </div>
-            ))}
-          </div>
+          <ConsultationForm />
         </Section>
       </main>
     </PageShell>

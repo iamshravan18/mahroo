@@ -19,6 +19,18 @@ export type ResultSegment = {
   qualified: boolean;
 };
 
+export type FitCheckOption = {
+  label: string;
+  value: string;
+};
+
+export type FitCheckQuestion = {
+  id: string;
+  question: string;
+  helper?: string;
+  options: FitCheckOption[];
+};
+
 export const imageAssets: ImageAsset[] = [
   {
     filename: "mahroo-private-mobility-hero.webp",
@@ -266,7 +278,7 @@ export const results: ResultSegment[] = [
       "Prepare documentation before choosing a country",
       "Revisit your plan when budget and timeline are clearer",
     ],
-    cta: "Send Me the Beginner's Guide",
+    cta: "Read the Starter Guide",
     qualified: false,
   },
   {
@@ -283,7 +295,7 @@ export const results: ResultSegment[] = [
       "Review whether licensed counsel is required",
       "Decide if a formal application should wait",
     ],
-    cta: "Request Manual Review",
+    cta: "Submit Private Review Qualifier",
     qualified: false,
   },
 ];
@@ -301,17 +313,123 @@ export const faqs = [
   ["Will my information be private?", "The intake should be confidential and handled only for advisory assessment. Sensitive matters should be discussed privately."],
 ];
 
-export const fitCheckQuestions = [
-  "What is your main reason for exploring residency or citizenship planning?",
-  "Which regions are currently most interesting?",
-  "What timeline are you considering?",
-  "What investment range are you comfortable evaluating?",
-  "Which investment style do you prefer?",
-  "Who needs to be included?",
-  "How important is physical relocation?",
-  "What matters most in the final recommendation?",
-  "How prepared is your documentation?",
-  "Any sensitive constraints?",
-  "What best describes you?",
-  "Where should we send your private result brief?",
+export const fitCheckQuestions: FitCheckQuestion[] = [
+  {
+    id: "motivation",
+    question: "What is your main reason for exploring residency or citizenship planning?",
+    options: [
+      { label: "Easier global travel", value: "mobility" },
+      { label: "Children's education", value: "education" },
+      { label: "Business expansion", value: "business" },
+      { label: "Family security / Plan B", value: "plan-b" },
+    ],
+  },
+  {
+    id: "region",
+    question: "Which regions are currently most interesting?",
+    options: [
+      { label: "Portugal / Europe", value: "europe" },
+      { label: "UAE / Dubai", value: "uae" },
+      { label: "Caribbean citizenship", value: "caribbean" },
+      { label: "Panama / Latin America", value: "panama" },
+      { label: "Unsure, need comparison", value: "strategic-hni" },
+    ],
+  },
+  {
+    id: "timeline",
+    question: "What timeline are you considering?",
+    options: [
+      { label: "Within 3 months", value: "0-3" },
+      { label: "3-6 months", value: "3-6" },
+      { label: "6-12 months", value: "6-12" },
+      { label: "Researching only", value: "research" },
+    ],
+  },
+  {
+    id: "budget",
+    question: "What investment range are you comfortable evaluating?",
+    options: [
+      { label: "Below USD 200k", value: "under-200" },
+      { label: "USD 200k-350k", value: "200-350" },
+      { label: "USD 350k-600k", value: "350-600" },
+      { label: "USD 600k-1M", value: "600-1000" },
+      { label: "USD 1M+", value: "1000-plus" },
+    ],
+  },
+  {
+    id: "investmentStyle",
+    question: "Which investment style do you prefer?",
+    options: [
+      { label: "Government contribution / donation", value: "donation" },
+      { label: "Real estate-backed route", value: "real-estate" },
+      { label: "Fund or financial investment", value: "fund" },
+      { label: "Business or professional eligibility", value: "business" },
+      { label: "Flexible if the route is right", value: "flexible" },
+    ],
+  },
+  {
+    id: "family",
+    question: "Who needs to be included?",
+    options: [
+      { label: "Only me", value: "self" },
+      { label: "Spouse and children", value: "spouse-children" },
+      { label: "Parents or dependents too", value: "parents" },
+      { label: "Multi-generational family planning", value: "multi-gen" },
+    ],
+  },
+  {
+    id: "relocation",
+    question: "How important is physical relocation?",
+    options: [
+      { label: "I prefer minimal stay", value: "minimal" },
+      { label: "Short visits are acceptable", value: "short-visits" },
+      { label: "Open to partial relocation", value: "partial" },
+      { label: "Ready to relocate if needed", value: "relocate" },
+    ],
+  },
+  {
+    id: "priority",
+    question: "What matters most in the final recommendation?",
+    options: [
+      { label: "Speed and mobility", value: "speed" },
+      { label: "European optionality", value: "eu-optionality" },
+      { label: "Business base close to India", value: "business-base" },
+      { label: "Education and family continuity", value: "education" },
+      { label: "Multi-jurisdiction strategy", value: "multi-jurisdiction" },
+    ],
+  },
+  {
+    id: "documentation",
+    question: "How prepared is your documentation?",
+    helper: "Think source of funds, tax records, family documents, and business ownership trail.",
+    options: [
+      { label: "Clean and organized", value: "ready" },
+      { label: "Mostly ready, needs review", value: "partial" },
+      { label: "Complex source-of-funds picture", value: "complex" },
+      { label: "Not sure yet", value: "unsure" },
+    ],
+  },
+  {
+    id: "sensitive",
+    question: "Any sensitive constraints?",
+    helper: "Choose the closest option. Sensitive cases are routed to private review before any calendar booking.",
+    options: [
+      { label: "No known constraints", value: "none" },
+      { label: "Past visa refusal", value: "visa-refusal" },
+      { label: "Tax, litigation, or compliance concern", value: "tax-legal" },
+      { label: "PEP / sanctions / reputational sensitivity", value: "pep" },
+      { label: "Source-of-funds complexity", value: "source-complex" },
+    ],
+  },
+  {
+    id: "profile",
+    question: "What best describes you?",
+    options: [
+      { label: "Founder / promoter", value: "founder" },
+      { label: "C-suite executive", value: "executive" },
+      { label: "Investor / family office", value: "investor" },
+      { label: "Exporter / international business owner", value: "exporter" },
+      { label: "Early-stage explorer", value: "explorer" },
+    ],
+  },
 ];

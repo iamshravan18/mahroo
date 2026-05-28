@@ -19,6 +19,12 @@ export default async function ResultPage({
     notFound();
   }
 
+  const ctaHref = result.qualified
+    ? "/consultation"
+    : result.slug === "manual-review"
+      ? "/consultation"
+      : "/guide";
+
   return (
     <PageShell>
       <main>
@@ -33,7 +39,7 @@ export default async function ResultPage({
               <div className="mt-8">
                 <Link
                   className={result.qualified ? "btn btn-light" : "btn btn-secondary-dark"}
-                  href={result.qualified ? "/consultation" : "/fit-check"}
+                  href={ctaHref}
                 >
                   {result.cta}
                 </Link>
