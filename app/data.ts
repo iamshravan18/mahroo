@@ -302,7 +302,7 @@ export const results: ResultSegment[] = [
 
 export const faqs = [
   ["Is this legal?", "Yes, residency and citizenship-by-investment programs are legal government routes when pursued through official, compliant channels. Each country has its own rules, due diligence, and documentation requirements."],
-  ["Will this affect my Indian citizenship?", "India does not permit dual Indian citizenship in the same way some countries do. Residency routes and citizenship routes should be treated differently and reviewed carefully."],
+  ["Will this affect my Indian citizenship?", "India does not permit dual citizenship for Indian citizens. Residency routes, permanent residence, and citizenship routes have very different consequences. Any citizenship pathway should be reviewed carefully for Indian citizenship, OCI eligibility, tax residence, family documents, and timing before a family commits."],
   ["Can you guarantee approval?", "No. Government authorities decide applications. Any advisor who guarantees approval before due diligence should be treated cautiously."],
   ["Can my spouse, children, or parents be included?", "Often yes, but rules vary by country and dependent category. Age, financial dependency, education status, and family documents matter."],
   ["Which is cheapest?", "The lowest advertised price is rarely the best decision. A serious comparison includes government fees, due diligence, legal costs, family size, investment lock-in, resale risk, and reputation."],
