@@ -21,18 +21,20 @@ export default function Home() {
   return (
     <PageShell>
       <main>
-        <section className="relative overflow-hidden bg-[#183b32] px-5 py-16 text-[#f7f2e8] sm:px-8 lg:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+        <section className="relative overflow-hidden bg-[#183b32] px-5 py-12 text-[#f7f2e8] sm:px-8 lg:py-16">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <div>
               <Eyebrow>Private mobility advisory for Indian HNI families</Eyebrow>
-              <h1 className="max-w-4xl font-serif text-5xl leading-[1.02] sm:text-6xl lg:text-7xl">
-                Private Residency and Citizenship Planning for Indian Families Thinking Beyond One Passport
+              <h1 className="max-w-3xl font-serif text-5xl leading-[1.02] sm:text-6xl lg:text-[5rem]">
+                Private Mobility Planning
               </h1>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#ded5c5]">
-                Mahroo Amina Shaikh advises Indian HNI families, entrepreneurs, and
-                investors exploring legitimate residency and citizenship-by-investment
-                routes across Europe, Dubai, the Caribbean, and Panama. Start with a
-                confidential fit check before choosing a program.
+              <p className="mt-5 max-w-2xl font-serif text-3xl leading-tight text-[#c8b79c]">
+                For Indian families thinking beyond one passport.
+              </p>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#ded5c5]">
+                Independent, program-agnostic guidance for Indian HNI families
+                comparing residency and citizenship routes across Europe, Dubai,
+                the Caribbean, and Panama.
               </p>
               <CTAGroup />
               <p className="mt-5 max-w-2xl text-xs leading-6 text-[#c8b79c]">
@@ -43,7 +45,7 @@ export default function Home() {
             <AssetImage
               filename="mahroo-private-mobility-hero.webp"
               alt="Indian family in a private advisory meeting for global residency planning."
-              className="aspect-[16/10]"
+              className="aspect-[16/10] lg:aspect-[5/3]"
               priority
             />
           </div>
@@ -95,11 +97,16 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section id="programs" tone="dark">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr]">
-            <div>
+        <Section id="programs" tone="dark" compact>
+          <div className="grid items-center gap-10 lg:grid-cols-[0.96fr_1.04fr]">
+            <div className="relative z-10">
               <Eyebrow>Programs covered</Eyebrow>
               <h2 className="section-title text-[#f7f2e8]">Compare routes by purpose, not popularity.</h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#d8cfbf]">
+                Mahroo helps families compare the role each route should play:
+                EU optionality, a Dubai business base, direct citizenship,
+                residency diversification, or a staged family strategy.
+              </p>
               <div className="mt-9 grid gap-4 sm:grid-cols-2">
                 {programs.map(([name, desc]) => (
                   <div key={name} className="dark-card">
@@ -109,11 +116,20 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <AssetImage
-              filename="mahroo-program-comparison.webp"
-              alt="Abstract program comparison cards for global residency planning."
-              className="aspect-[21/12]"
-            />
+            <div className="program-visual">
+              <AssetImage
+                filename="mahroo-result-strategic-hni.webp"
+                alt="Multi-jurisdiction planning cards arranged in a private family office."
+                className="aspect-[4/3]"
+              />
+              <div className="program-note">
+                <p className="font-serif text-2xl text-[#f7f2e8]">One family brief. Several routes. One clean shortlist.</p>
+                <p className="mt-3 text-sm leading-6 text-[#d8cfbf]">
+                  The objective is not to sell a country. It is to remove the
+                  wrong options before any commitment becomes public.
+                </p>
+              </div>
+            </div>
           </div>
         </Section>
 
@@ -218,20 +234,25 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section tone="dark">
-          <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Start quietly. Decide carefully.</Eyebrow>
-            <h2 className="section-title text-[#f7f2e8]">
-              Before you choose a country, understand what your family actually qualifies for.
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-[#d8cfbf]">
-              Review the full cost, the documentation risks, and the family implications before anyone sells you a passport.
-            </p>
-            <div className="mt-8">
-              <Link href="/fit-check" className="btn btn-light">Take the Private Mobility Fit Check</Link>
+        <section className="final-cta-section px-5 py-20 text-[#f7f2e8] sm:px-8 lg:py-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="final-cta-panel">
+              <div className="max-w-3xl">
+                <Eyebrow>Start quietly. Decide carefully.</Eyebrow>
+                <h2 className="section-title text-[#f7f2e8]">
+                  Before you choose a country, understand what your family actually qualifies for.
+                </h2>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d8cfbf]">
+                  Review the full cost, documentation risks, and family implications
+                  in a confidential fit check before anyone sells you a program.
+                </p>
+                <div className="mt-8">
+                  <Link href="/fit-check" className="btn btn-light">Take the Private Mobility Fit Check</Link>
+                </div>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
       </main>
     </PageShell>
   );
