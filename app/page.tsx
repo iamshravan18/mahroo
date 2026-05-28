@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AssetImage, CTAGroup, Eyebrow, PageShell, Section } from "./components";
-import { faqs, programs } from "./data";
+import { faqs } from "./data";
 
 const trustSignals = [
   "Independent, program-agnostic advisory",
@@ -15,6 +15,39 @@ const method = [
   ["Documentation Review", "Identify source-of-funds, family, tax, and background issues early."],
   ["Application Coordination", "Coordinate with licensed/local counsel and authorized channels where required."],
   ["Ongoing Planning", "Review renewals, family additions, tax-residency considerations, and future pathways."],
+];
+
+const routePrograms = [
+  {
+    name: "Portugal",
+    signal: "European education optionality",
+    desc: "A considered EU path for families thinking about study access, residence rights, and long-term citizenship optionality.",
+  },
+  {
+    name: "Greece",
+    signal: "A calm European base",
+    desc: "A residence-led route for families who want European access without making relocation the first move.",
+  },
+  {
+    name: "Malta",
+    signal: "Structured permanence",
+    desc: "Permanent residence and merit-based citizenship discussions handled carefully under current-law expectations.",
+  },
+  {
+    name: "UAE / Dubai",
+    signal: "Founder base close to India",
+    desc: "A practical regional base for entrepreneurs who want proximity, speed, and long-term family residence options.",
+  },
+  {
+    name: "Caribbean",
+    signal: "Direct mobility advantage",
+    desc: "Citizenship routes for qualified families where due diligence, official pricing, and documentation strength matter.",
+  },
+  {
+    name: "Panama",
+    signal: "Diversification beyond the obvious",
+    desc: "A residency diversification route for families exploring USD-linked and Latin American optionality.",
+  },
 ];
 
 export default function Home() {
@@ -98,8 +131,8 @@ export default function Home() {
         </Section>
 
         <Section id="programs" tone="dark" compact>
-          <div className="grid items-center gap-10 lg:grid-cols-[0.96fr_1.04fr]">
-            <div className="relative z-10">
+          <div className="program-dream">
+            <div className="relative z-10 max-w-3xl">
               <Eyebrow>Programs covered</Eyebrow>
               <h2 className="section-title text-[#f7f2e8]">Compare routes by purpose, not popularity.</h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#d8cfbf]">
@@ -107,27 +140,23 @@ export default function Home() {
                 EU optionality, a Dubai business base, direct citizenship,
                 residency diversification, or a staged family strategy.
               </p>
-              <div className="mt-9 grid gap-4 sm:grid-cols-2">
-                {programs.map(([name, desc]) => (
-                  <div key={name} className="dark-card">
-                    <h3 className="font-serif text-2xl">{name}</h3>
-                    <p className="mt-3 text-sm leading-6 text-[#d8cfbf]">{desc}</p>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div className="program-visual">
-              <AssetImage
-                filename="mahroo-result-strategic-hni.webp"
-                alt="Multi-jurisdiction planning cards arranged in a private family office."
-                className="aspect-[4/3]"
-              />
-              <div className="program-note">
-                <p className="font-serif text-2xl text-[#f7f2e8]">One family brief. Several routes. One clean shortlist.</p>
-                <p className="mt-3 text-sm leading-6 text-[#d8cfbf]">
-                  The objective is not to sell a country. It is to remove the
-                  wrong options before any commitment becomes public.
-                </p>
+            <div className="route-grid mt-10">
+              <div className="route-line" />
+              {routePrograms.map((program) => (
+                <article key={program.name} className="route-card">
+                  <div className="route-icon">
+                    <ProgramIcon name={program.name} />
+                  </div>
+                  <p className="route-signal">{program.signal}</p>
+                  <h3>{program.name}</h3>
+                  <p>{program.desc}</p>
+                </article>
+              ))}
+              <div className="route-promise">
+                <span>One family brief</span>
+                <span>Several possible routes</span>
+                <span>One clean shortlist</span>
               </div>
             </div>
           </div>
@@ -255,5 +284,76 @@ export default function Home() {
         </section>
       </main>
     </PageShell>
+  );
+}
+
+function ProgramIcon({ name }: { name: string }) {
+  const common = {
+    width: 78,
+    height: 78,
+    viewBox: "0 0 78 78",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    "aria-hidden": true,
+  };
+
+  if (name === "Portugal") {
+    return (
+      <svg {...common}>
+        <path d="M17 50c9-18 26-27 44-28" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
+        <path d="M20 55c10-8 25-9 39-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".58" />
+        <circle cx="54" cy="24" r="7" stroke="currentColor" strokeWidth="2.4" />
+        <path d="M22 43h20M27 36h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".7" />
+      </svg>
+    );
+  }
+
+  if (name === "Greece") {
+    return (
+      <svg {...common}>
+        <path d="M19 30l20-11 20 11" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M24 31v23M34 31v23M44 31v23M54 31v23M20 55h38" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M16 61h46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".55" />
+      </svg>
+    );
+  }
+
+  if (name === "Malta") {
+    return (
+      <svg {...common}>
+        <path d="M22 57V35c0-10 7-18 17-18s17 8 17 18v22" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
+        <path d="M30 57V36c0-5 4-9 9-9s9 4 9 9v21" stroke="currentColor" strokeWidth="2" opacity=".62" />
+        <path d="M18 57h42M26 21h26" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (name === "UAE / Dubai") {
+    return (
+      <svg {...common}>
+        <path d="M18 58h42" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M24 58V36h8v22M37 58V21h7v37M49 58V31h8v27" stroke="currentColor" strokeWidth="2.6" strokeLinejoin="round" />
+        <path d="M40.5 21c1.6 7 1.4 13.4 0 20" stroke="currentColor" strokeWidth="1.8" opacity=".56" />
+      </svg>
+    );
+  }
+
+  if (name === "Caribbean") {
+    return (
+      <svg {...common}>
+        <path d="M18 56c11-5 19-5 30 0 5 2 8 2 12 0" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M39 54c2-14 4-24 13-34" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M52 20c-8 0-13 3-16 9 8 1 14-1 16-9ZM52 20c7 4 9 9 8 16-7-2-11-8-8-16Z" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...common}>
+      <path d="M17 48c12-10 32-10 44 0" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M24 48v9M33 43v14M42 43v14M51 48v9" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M22 31c9-8 25-8 34 0M27 25c7-5 17-5 24 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".6" />
+      <circle cx="39" cy="20" r="4" stroke="currentColor" strokeWidth="2" />
+    </svg>
   );
 }
