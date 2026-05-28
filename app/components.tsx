@@ -40,7 +40,7 @@ export function Footer() {
         </div>
         <div className="text-sm leading-8 text-[#d8cfbf]">
           <Link className="block" href="/fit-check">Private Mobility Fit Check</Link>
-          <Link className="block" href="/consultation">Private Consultation</Link>
+          <Link className="block" href="/consultation">Confidential Consultation</Link>
           <Link className="block" href="/privacy">Privacy and Disclaimer</Link>
         </div>
         <div className="text-sm leading-7 text-[#d8cfbf]">
@@ -118,10 +118,10 @@ export function CTAGroup() {
   return (
     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
       <Link href="/fit-check" className="btn">
-        Take the 3-Minute Fit Check
+        Take the Private Mobility Fit Check
       </Link>
       <Link href="/consultation" className="btn btn-secondary">
-        Book a Private Consultation
+        Request a Confidential Consultation
       </Link>
     </div>
   );

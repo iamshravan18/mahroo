@@ -170,12 +170,12 @@ export const imageAssets: ImageAsset[] = [
 ];
 
 export const programs = [
-  ["Portugal", "EU residency, fund-based investment, and a longer-term European path."],
-  ["Greece", "A real-estate-led EU residency conversation for families who prefer tangible assets."],
-  ["Malta", "Permanent residence and current-law citizenship-by-merit discussions."],
-  ["UAE / Dubai", "A regional base close to India with business, banking, and family residency advantages."],
-  ["Caribbean", "Direct citizenship routes where due diligence, reputation, and official pricing matter."],
-  ["Panama", "Residency diversification, USD-linked exposure, and Latin America optionality."],
+  ["Portugal", "For families evaluating EU residency and long-term citizenship optionality through current-law investment routes."],
+  ["Greece", "Real-estate-led EU residency for families seeking European access without immediate relocation."],
+  ["Malta", "Permanent residence and merit-based citizenship discussions handled with current-law caution."],
+  ["UAE / Dubai", "For founders and families building a regional base close to India with long-term residency options."],
+  ["Caribbean", "Direct citizenship routes for qualified families where due diligence and official pricing matter."],
+  ["Panama", "Residency diversification, USD-linked exposure, and Latin American optionality."],
 ];
 
 export const results: ResultSegment[] = [
@@ -193,7 +193,7 @@ export const results: ResultSegment[] = [
       "How many family members must be included",
       "Whether your Indian source-of-funds file is ready",
     ],
-    cta: "Request a Private Europe Options Review",
+    cta: "Request a Confidential Consultation",
     qualified: true,
   },
   {
@@ -227,7 +227,7 @@ export const results: ResultSegment[] = [
       "Due diligence and source-of-funds readiness",
       "Whether donation or real estate is appropriate",
     ],
-    cta: "Book a Citizenship Route Review",
+    cta: "Request a Confidential Citizenship Review",
     qualified: true,
   },
   {
@@ -261,7 +261,7 @@ export const results: ResultSegment[] = [
       "Indian compliance and source-of-funds readiness",
       "Sequencing what to do now, next, and later",
     ],
-    cta: "Request a Private Strategy Call",
+    cta: "Request a Confidential Strategy Call",
     qualified: true,
   },
   {
@@ -295,7 +295,7 @@ export const results: ResultSegment[] = [
       "Review whether licensed counsel is required",
       "Decide if a formal application should wait",
     ],
-    cta: "Submit Private Review Qualifier",
+    cta: "Request a Confidential Manual Review",
     qualified: false,
   },
 ];
@@ -354,6 +354,7 @@ export const fitCheckQuestions: FitCheckQuestion[] = [
       { label: "USD 350k-600k", value: "350-600" },
       { label: "USD 600k-1M", value: "600-1000" },
       { label: "USD 1M+", value: "1000-plus" },
+      { label: "Prefer to discuss privately", value: "private-budget" },
     ],
   },
   {

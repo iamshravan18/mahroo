@@ -147,7 +147,7 @@ export function ConsultationForm() {
       ) : null}
 
       <button className="btn mt-8 w-full sm:w-auto" disabled={status === "submitting"} type="submit">
-        {status === "submitting" ? "Sending qualifier..." : "Submit Private Qualifier"}
+        {status === "submitting" ? "Sending qualifier..." : "Request a Confidential Consultation"}
       </button>
     </form>
   );

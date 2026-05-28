@@ -74,6 +74,7 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
   const router = useRouter();
   const [answers, setAnswers] = useState<Answers>({});
   const [contact, setContact] = useState<Contact>(initialContact);
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
 
   const answeredCount = Object.keys(answers).length;
@@ -88,7 +89,7 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
 
   async function submitFitCheck(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!isComplete || !contactComplete || status === "submitting") {
+    if (!isComplete || !contactComplete || !consent || status === "submitting") {
       return;
     }
 
@@ -208,14 +209,26 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
           </div>
         </fieldset>
 
+        <label className="flex items-start gap-3 rounded-lg border border-[#b7954a]/30 bg-[#fffaf0] p-4 text-sm leading-6 text-[#52564f]">
+          <input
+            className="mt-1 accent-[#183b32]"
+            checked={consent}
+            required
+            type="checkbox"
+            onChange={(event) => setConsent(event.target.checked)}
+          />
+          I consent to Mahroo reviewing these answers to prepare my private result brief.
+          No partial quiz data is submitted before this step.
+        </label>
+
         {status === "error" ? (
           <p className="rounded-lg border border-[#b7954a]/40 bg-[#fffaf0] p-4 text-sm text-[#6a562a]">
             The submission did not go through. Please check the fields and try again.
           </p>
         ) : null}
 
-        <button className="btn w-full sm:w-auto" disabled={!isComplete || !contactComplete || status === "submitting"} type="submit">
-          {status === "submitting" ? "Preparing your result..." : "Show My Private Result"}
+        <button className="btn w-full sm:w-auto" disabled={!isComplete || !contactComplete || !consent || status === "submitting"} type="submit">
+          {status === "submitting" ? "Preparing your result..." : "Obtain My Private Result"}
         </button>
       </div>
     </form>

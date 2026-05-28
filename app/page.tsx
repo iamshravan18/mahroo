@@ -88,6 +88,9 @@ export default function Home() {
                   <div key={item} className="check-item">{item}</div>
                 ))}
               </div>
+              <Link className="btn mt-8" href="/fit-check">
+                Take the Private Mobility Fit Check
+              </Link>
             </div>
           </div>
         </Section>
@@ -156,26 +159,36 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className="grid gap-8 lg:grid-cols-2">
-            <div className="soft-card">
-              <h2 className="font-serif text-3xl text-[#183b32]">Good fit</h2>
-              {[
-                "Indian founders, promoters, exporters, investors, and HNI families",
-                "Families with investable capital from clear sources",
-                "Parents planning education and global access for children",
-                "Business owners considering Dubai, Europe, or a second jurisdiction",
-                "Families who value privacy and proper documentation",
-              ].map((item) => <p className="check-item mt-4" key={item}>{item}</p>)}
+          <div>
+            <div className="grid gap-8 lg:grid-cols-2">
+              <div className="soft-card">
+                <h2 className="font-serif text-3xl text-[#183b32]">Good fit</h2>
+                {[
+                  "Indian founders, promoters, exporters, investors, and HNI families",
+                  "Families with investable capital from clear sources",
+                  "Parents planning education and global access for children",
+                  "Business owners considering Dubai, Europe, or a second jurisdiction",
+                  "Families who value privacy and proper documentation",
+                ].map((item) => <p className="check-item mt-4" key={item}>{item}</p>)}
+              </div>
+              <div className="soft-card border-[#b7954a]/35">
+                <h2 className="font-serif text-3xl text-[#183b32]">Not a fit</h2>
+                {[
+                  "Anyone seeking guaranteed approval",
+                  "Anyone with unexplained funds",
+                  "Anyone looking for unofficial discounts below government pricing",
+                  "Anyone expecting legal advice without licensed counsel",
+                  "Anyone unwilling to complete due diligence",
+                ].map((item) => <p className="check-item mt-4" key={item}>{item}</p>)}
+              </div>
             </div>
-            <div className="soft-card border-[#b7954a]/35">
-              <h2 className="font-serif text-3xl text-[#183b32]">Not a fit</h2>
-              {[
-                "Anyone seeking guaranteed approval",
-                "Anyone with unexplained funds",
-                "Anyone looking for unofficial discounts below government pricing",
-                "Anyone expecting legal advice without licensed counsel",
-                "Anyone unwilling to complete due diligence",
-              ].map((item) => <p className="check-item mt-4" key={item}>{item}</p>)}
+            <div className="mt-9 rounded-lg border border-[#b7954a]/30 bg-[#fffaf0] p-7 text-center">
+              <p className="font-serif text-3xl text-[#183b32]">
+                If you are in the good-fit column, start with a private fit check.
+              </p>
+              <Link className="btn mt-5" href="/fit-check">
+                Take the Private Mobility Fit Check
+              </Link>
             </div>
           </div>
         </Section>
@@ -190,6 +203,18 @@ export default function Home() {
                 <p>{answer}</p>
               </details>
             ))}
+          </div>
+          <div className="mt-10 rounded-lg border border-[#b7954a]/30 bg-[#f7f2e8] p-7">
+            <h3 className="font-serif text-3xl text-[#183b32]">
+              Still comparing options?
+            </h3>
+            <p className="mt-3 max-w-2xl leading-7 text-[#52564f]">
+              The Private Mobility Fit Check is the cleanest starting point before
+              any country, cost, or calendar conversation.
+            </p>
+            <Link className="btn mt-5" href="/fit-check">
+              Take the Private Mobility Fit Check
+            </Link>
           </div>
         </Section>
 
