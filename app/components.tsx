@@ -65,7 +65,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#8a743d]">
+    <p className="eyebrow mb-4 text-xs font-semibold uppercase tracking-[0.24em]">
       {children}
     </p>
   );
@@ -83,7 +83,7 @@ export function Section({
   compact?: boolean;
 }) {
   const toneClass =
-    tone === "dark" ? "bg-[#183b32] text-[#f7f2e8]" : tone === "white" ? "bg-[#fffaf0]" : "";
+    tone === "dark" ? "section-dark bg-[#183b32] text-[#f7f2e8]" : tone === "white" ? "bg-[#fffaf0]" : "";
   return (
     <section id={id} className={`px-5 sm:px-8 ${compact ? "py-16 lg:py-20" : "py-20 lg:py-28"} ${toneClass}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
