@@ -528,7 +528,97 @@ textarea.field-input {
 }
 
 @media (max-width: 560px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .site-header-inner {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .brand-link {
+    flex: 1 1 auto;
+  }
+
+  .brand-name {
+    max-width: 158px;
+    font-size: 18px;
+    line-height: 1.08;
+  }
+
+  .brand-kicker {
+    max-width: 150px;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    line-height: 1.35;
+  }
+
+  .mobile-header-cta {
+    width: auto;
+    min-width: 112px;
+    max-width: 42vw;
+    padding: 0 14px;
+    white-space: nowrap;
+  }
+
+  .site-section {
+    padding: 48px 18px;
+  }
+
+  .hero-section {
+    padding: 44px 18px 52px;
+  }
+
+  .hero-title {
+    max-width: 11ch;
+    font-size: clamp(3rem, 15vw, 3.9rem);
+    line-height: 0.98;
+  }
+
+  .hero-subtitle {
+    max-width: 13ch;
+    margin-top: 16px;
+    font-size: clamp(2rem, 9.5vw, 2.55rem);
+    line-height: 1.08;
+  }
+
+  .hero-copy {
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .hero-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cta-group {
+    margin-top: 22px;
+  }
+
+  .section-title {
+    font-size: clamp(2.15rem, 11vw, 3.1rem);
+    line-height: 1.04;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    line-height: 1.55;
+  }
+
+  .soft-card,
+  .faq-card {
+    padding: 20px;
+  }
+
+  .image-frame {
+    box-shadow: 0 18px 48px rgba(32, 35, 33, 0.14);
+  }
+
   .route-card {
+    min-height: 0;
     padding: 22px;
   }
 
@@ -539,5 +629,114 @@ textarea.field-input {
 
   .route-promise span {
     font-size: 19px;
+  }
+
+  .route-card h3 {
+    font-size: 30px;
+  }
+
+  .route-signal {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .process-row {
+    grid-template-columns: 38px 1fr;
+    gap: 14px;
+  }
+
+  .process-row span,
+  .number-pill {
+    width: 34px;
+    height: 34px;
+  }
+
+  .final-cta-section {
+    padding: 64px 18px;
+    background:
+      linear-gradient(180deg, rgba(24, 59, 50, 0.92), rgba(24, 59, 50, 0.86)),
+      url("/images/mahroo-family-decision.webp") center / cover;
+  }
+
+  .final-cta-panel {
+    padding: 24px;
+  }
+
+  .fit-hero-title {
+    font-size: clamp(2.25rem, 10vw, 2.85rem);
+    line-height: 1.02;
+  }
+
+  .section-dark h1 {
+    font-size: clamp(2.25rem, 10vw, 2.85rem);
+    line-height: 1.04;
+  }
+
+  .fit-check-form {
+    gap: 22px;
+  }
+
+  .assessment-card {
+    position: static;
+  }
+
+  .assessment-card h2 {
+    font-size: 28px;
+    line-height: 1.05;
+  }
+
+  .question-card {
+    padding: 18px;
+  }
+
+  .question-layout {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .question-card legend {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .answer-chip {
+    min-height: 52px;
+    padding: 14px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .field-input {
+    min-height: 52px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-name {
+    max-width: 132px;
+    font-size: 17px;
+  }
+
+  .brand-kicker {
+    max-width: 132px;
+  }
+
+  .mobile-header-cta {
+    min-width: 102px;
+    padding: 0 12px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
   }
 }

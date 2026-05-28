@@ -54,22 +54,22 @@ export default function Home() {
   return (
     <PageShell>
       <main>
-        <section className="relative overflow-hidden bg-[#183b32] px-5 py-12 text-[#f7f2e8] sm:px-8 lg:py-16">
+        <section className="hero-section relative overflow-hidden bg-[#183b32] px-5 py-12 text-[#f7f2e8] sm:px-8 lg:py-16">
           <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
             <div>
               <Eyebrow>Private mobility advisory for Indian HNI families</Eyebrow>
-              <h1 className="max-w-3xl font-serif text-5xl leading-[1.02] sm:text-6xl lg:text-[5rem]">
+              <h1 className="hero-title max-w-3xl font-serif text-5xl leading-[1.02] sm:text-6xl lg:text-[5rem]">
                 Private Mobility Planning
               </h1>
-              <p className="mt-5 max-w-2xl font-serif text-3xl leading-tight text-[#c8b79c]">
+              <p className="hero-subtitle mt-5 max-w-2xl font-serif text-3xl leading-tight text-[#c8b79c]">
                 For Indian families thinking beyond one passport.
               </p>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-[#ded5c5]">
+              <CTAGroup />
+              <p className="hero-copy mt-6 max-w-2xl text-lg leading-8 text-[#ded5c5]">
                 Independent, program-agnostic guidance for Indian HNI families
                 comparing residency and citizenship routes across Europe, Dubai,
                 the Caribbean, and Panama.
               </p>
-              <CTAGroup />
               <p className="mt-5 max-w-2xl text-xs leading-6 text-[#c8b79c]">
                 Preliminary guidance only. No guarantee of approval. Program rules and
                 eligibility depend on current government requirements and due diligence.
@@ -78,7 +78,7 @@ export default function Home() {
             <AssetImage
               filename="mahroo-private-mobility-hero.webp"
               alt="Indian family in a private advisory meeting for global residency planning."
-              className="aspect-[16/10] lg:aspect-[5/3]"
+              className="hero-image aspect-[16/10] lg:aspect-[5/3]"
               priority
             />
           </div>

@@ -120,8 +120,8 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
   }
 
   return (
-    <form className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]" onSubmit={submitFitCheck}>
-      <aside className="soft-card h-fit lg:sticky lg:top-28">
+    <form className="fit-check-form grid gap-10 lg:grid-cols-[0.78fr_1.22fr]" onSubmit={submitFitCheck}>
+      <aside className="assessment-card soft-card h-fit lg:sticky lg:top-28">
         <h2 className="font-serif text-3xl text-[#183b32]">Your private assessment</h2>
         <p className="mt-4 text-sm leading-7 text-[#52564f]">
           {answeredCount} of {fitCheckQuestions.length} questions answered.
@@ -139,15 +139,15 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
 
       <div className="space-y-5">
         {fitCheckQuestions.map((question, index) => (
-          <fieldset key={question.id} className="soft-card">
-            <div className="flex items-start gap-4">
+          <fieldset key={question.id} className="question-card soft-card">
+            <div className="question-layout flex items-start gap-4">
               <span className="number-pill shrink-0">{index + 1}</span>
               <div className="flex-1">
                 <legend className="text-xl font-semibold text-[#183b32]">{question.question}</legend>
                 {question.helper ? (
                   <p className="mt-2 text-sm leading-6 text-[#706657]">{question.helper}</p>
                 ) : null}
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="answer-grid mt-5 grid gap-3 sm:grid-cols-2">
                   {question.options.map((answer) => {
                     const active = answers[question.id] === answer.value;
                     return (
@@ -168,8 +168,8 @@ export function FitCheckForm({ resultLabels }: { resultLabels: ResultLabel[] }) 
           </fieldset>
         ))}
 
-        <fieldset className="soft-card" id="private-result">
-          <div className="flex items-start gap-4">
+        <fieldset className="question-card soft-card" id="private-result">
+          <div className="question-layout flex items-start gap-4">
             <span className="number-pill shrink-0">{fitCheckQuestions.length + 1}</span>
             <div className="flex-1">
               <legend className="text-xl font-semibold text-[#183b32]">

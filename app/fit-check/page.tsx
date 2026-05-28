@@ -9,7 +9,7 @@ export default function FitCheckPage() {
         <Section tone="dark">
           <div className="max-w-4xl">
             <Eyebrow>The Private Mobility Fit Check</Eyebrow>
-            <h1 className="font-serif text-5xl leading-tight text-[#f7f2e8] sm:text-6xl">
+            <h1 className="fit-hero-title font-serif text-5xl leading-tight text-[#f7f2e8] sm:text-6xl">
               Find which residency or citizenship route may match your family, budget, and timeline.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[#d8cfbf]">

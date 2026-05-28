@@ -4,10 +4,10 @@ import Link from "next/link";
 export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-[rgba(24,59,50,0.12)] bg-[#f7f2e8]/92 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
-        <Link href="/" className="flex flex-col leading-none">
-          <span className="font-serif text-xl text-[#183b32]">Mahroo Amina Shaikh</span>
-          <span className="mt-1 text-[11px] uppercase tracking-[0.22em] text-[#706657]">
+      <div className="site-header-inner mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <Link href="/" className="brand-link flex min-w-0 flex-col leading-none">
+          <span className="brand-name font-serif text-xl text-[#183b32]">Mahroo Amina Shaikh</span>
+          <span className="brand-kicker mt-1 text-[11px] uppercase tracking-[0.22em] text-[#706657]">
             Private mobility advisory
           </span>
         </Link>
@@ -85,7 +85,7 @@ export function Section({
   const toneClass =
     tone === "dark" ? "section-dark bg-[#183b32] text-[#f7f2e8]" : tone === "white" ? "bg-[#fffaf0]" : "";
   return (
-    <section id={id} className={`px-5 sm:px-8 ${compact ? "py-16 lg:py-20" : "py-20 lg:py-28"} ${toneClass}`}>
+    <section id={id} className={`site-section px-5 sm:px-8 ${compact ? "py-16 lg:py-20" : "py-20 lg:py-28"} ${toneClass}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -118,7 +118,7 @@ export function AssetImage({
 
 export function CTAGroup() {
   return (
-    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+    <div className="cta-group mt-8 flex flex-col gap-3 sm:flex-row">
       <Link href="/fit-check" className="btn">
         Take the Private Mobility Fit Check
       </Link>
